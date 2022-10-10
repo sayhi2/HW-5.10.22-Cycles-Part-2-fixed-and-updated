@@ -13,7 +13,7 @@ public class Main {
         int i = 0;
         while (total < 2459000) {
             i++;
-            total = total + saving;
+            total+=saving;
             System.out.println("Месяц " + i + " Сумма накоплений равна " + total + " рублей");
         }
 
@@ -31,6 +31,7 @@ public class Main {
         //1 2 3 4 5 6 7 8 9 10
         //
         //10 9 8 7 6 5 4 3 2 1
+
         int a = 0;
         while (a < 10) {
             a++;
@@ -48,14 +49,15 @@ public class Main {
         // какая численность населения будет через 10 лет, принимая во внимание, что показатели рождаемости и смертности постоянны.
         //  В консоль выведите результат операции на каждый год в формате "Год …, численность населения составляет … "
 
-        int population = 12000000;
-        int births = 17 * population / 1000;
-        int deaths = 8 * population / 1000;
-        int yearToDate = 0;
-        while (yearToDate < 10) {
-            population = population + births - deaths;
-            yearToDate++;
-            System.out.println(" Год " + yearToDate + ", численность населения составляет " + population);
+        int population = 12_000_000;
+        int births;
+        int deaths;
+        for (i = 1; i <= 10; i ++) {
+         births = population / 1000 * 17;
+         deaths = population / 1000 * 8;
+         population += births - deaths;
+
+            System.out.println(" Год " + i + ",численность населения составляет " + population);
         }
 
         //Task 2-1
